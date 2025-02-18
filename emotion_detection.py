@@ -6,3 +6,9 @@ def emotion_detector(text_to_analyse):
     header = { "grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en..." }
     response = requests.post(url, json=myobj, headers=header)
     return response.text
+
+# Run the function and print output for GitHub Actions
+if __name__ == "__main__":
+    test_text = "I am feeling very happy today!"
+    result = emotion_detector(test_text)
+    print("Emotion Detection Output:", result)
